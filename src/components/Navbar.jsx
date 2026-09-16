@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
+        
         {/* Logo */}
         <Link
           to="/"
@@ -22,7 +22,7 @@ function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           <Link
             to="/"
             className="text-gray-600 hover:text-blue-600 font-medium transition"
@@ -50,9 +50,17 @@ function Navbar() {
           >
             Profile
           </Link>
+
+          {/* AI Assistant */}
+          <Link
+            to="/ai-assistant"
+            className="text-purple-600 hover:text-purple-700 font-semibold transition"
+          >
+            🤖 AI Assistant
+          </Link>
         </div>
 
-        {/* Desktop Button */}
+        {/* Desktop Book Button */}
         <Link
           to="/doctors"
           className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold transition"
@@ -60,7 +68,7 @@ function Navbar() {
           Book Now
         </Link>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-gray-700 text-3xl"
@@ -73,7 +81,7 @@ function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
-          <div className="px-6 py-5 flex flex-col gap-4">
+          <div className="px-6 py-5 flex flex-col gap-3">
 
             <Link
               to="/"
@@ -107,10 +115,20 @@ function Navbar() {
               Profile
             </Link>
 
+            {/* Mobile AI Assistant */}
+            <Link
+              to="/ai-assistant"
+              onClick={closeMenu}
+              className="text-purple-600 hover:text-purple-700 font-semibold py-2"
+            >
+              🤖 AI Assistant
+            </Link>
+
+            {/* Mobile Book Button */}
             <Link
               to="/doctors"
               onClick={closeMenu}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-xl font-semibold transition"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-xl font-semibold transition mt-2"
             >
               Book Now
             </Link>

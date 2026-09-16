@@ -8,12 +8,12 @@ import DoctorDetails from "./pages/DoctorDetails";
 import BookAppointment from "./pages/BookAppointment";
 import MyAppointments from "./pages/MyAppointments";
 import Profile from "./pages/Profile";
+import AIAssistant from "./pages/AIAssistant";
 import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
-
       <Navbar />
 
       <Routes>
@@ -45,11 +45,15 @@ function App() {
         />
 
         <Route
+          path="/ai-assistant"
+          element={<AIAssistant />}
+        />
+
+        <Route
           path="*"
           element={<NotFound />}
         />
       </Routes>
-
     </BrowserRouter>
   );
 }
